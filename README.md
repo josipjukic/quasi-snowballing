@@ -10,7 +10,7 @@ A data frame with sentences should be prepared in the `csv` format.
 The sentences are presumed to be listed in the column `sentence`, along with the
 Boolean values which indicate whether sentences are in the seed or not,
 under the column `seed`.
-Additionally, sentence embeddings should be precomputed and stored in a file as
+Additionally, sentence embeddings should be pre-computed and stored in a file as
 a `NumPy` array or a `PyTorch` tensor.
 To avoid memory issues when calculating similarities, array and tensor splitting
 is supported for candidate computation. The number of the parts is dynamically adjusted, depending on
@@ -81,6 +81,6 @@ paraphrases annotated with:
 
 ### Limitations
 
-Currently, it is required for the embeddings to fit in the memory with some overhead for similarity computations.
+The embeddings are required to fit in the memory with 50% overhead for similarity computations.
 For example, if you use embeddings that require 40 GB of RAM, you should be able to provide 20 GB of RAM in addition.
 Furthermore, if GPU is used, the size of the embeddings is limited by the GPU memory.
